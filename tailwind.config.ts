@@ -13,7 +13,13 @@ const config: Config = {
 			center: true,
 			padding: "2rem",
 			screens: {
+				"sm": "640px",
+				"md": "768px",
+				"lg": "1024px",
+				"xl": "1280px",
 				"2xl": "1400px",
+				"3xl": "1600px",
+				"4xl": "1920px",
 			},
 		},
 		extend: {
@@ -70,6 +76,21 @@ const config: Config = {
 			animation: {
 				"accordion-down": "accordion-down 0.2s ease-out",
 				"accordion-up": "accordion-up 0.2s ease-out",
+			},
+			fontSize: {
+				'2xl': '1.5rem',
+				'3xl': '1.875rem',
+				'4xl': '2.25rem',
+				'5xl': '3rem',
+			},
+			spacing: {
+				'18': '4.5rem',
+				'22': '5.5rem',
+				'30': '7.5rem',
+			},
+			maxWidth: {
+				'8xl': '88rem',
+				'9xl': '96rem',
 			},
 		},
 	},

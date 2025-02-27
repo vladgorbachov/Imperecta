@@ -1,36 +1,32 @@
-import type { Department } from "../types"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
-interface SidebarProps {
-  onSelectDepartment: (department: Department) => void
+export function Sidebar({ className = "" }) {
+    return (
+        <div className={`p-4 space-y-6 ${className}`}>
+            <Card>
+                <CardHeader>
+                    <CardTitle className="text-xl">Quick Stats</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p className="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </CardContent>
+            </Card>
+            <Card>
+                <CardHeader>
+                    <CardTitle className="text-xl">Recent Activity</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p className="text-lg">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </CardContent>
+            </Card>
+            <Card>
+                <CardHeader>
+                    <CardTitle className="text-xl">Notifications</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p className="text-lg">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                </CardContent>
+            </Card>
+        </div>
+    )
 }
-
-const departments: Department[] = [
-  { id: "hr", name: "Human Resources" },
-  { id: "finance", name: "Finance & Accounting" },
-  { id: "sales", name: "Sales & Marketing" },
-  { id: "production", name: "Production & Operations" },
-  { id: "rd", name: "Research & Development" },
-]
-
-export default function Sidebar({ onSelectDepartment }: SidebarProps) {
-  return (
-    <aside className="w-64 bg-gray-800 text-white p-6">
-      <h2 className="text-2xl font-bold mb-5">Departments</h2>
-      <nav>
-        <ul>
-          {departments.map((dept) => (
-            <li key={dept.id} className="mb-2">
-              <button
-                onClick={() => onSelectDepartment(dept)}
-                className="w-full text-left py-2 px-4 rounded hover:bg-gray-700 transition-colors"
-              >
-                {dept.name}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </aside>
-  )
-}
-
